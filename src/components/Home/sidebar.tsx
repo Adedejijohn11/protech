@@ -6,7 +6,7 @@ import { GoSearch } from "react-icons/go";
 function SideBar() {
   return (
     <div className=" flex flex-col p-[15px] h-full w-full">
-      <h1>Bestsellers</h1>
+      <h1 className="text-4xl">Bestsellers</h1>
       <div className=" flex flex-row items-start mt-[20px]">
         <a className="text-gray-600" href="/home">
           Home

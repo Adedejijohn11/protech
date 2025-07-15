@@ -10,9 +10,9 @@ type cardProps = {
 
 function ProductCard({ item }: cardProps) {
   return (
-    <div className=" h-[480px] w-[393px] flex flex-col items-center ">
+    <div className=" h-[480px] w-full flex flex-col items-center">
       {/*product-item */}
-      <div className="h-[370px] w-[393px] rounded-2xl bg-secondary p-2 ">
+      <div className="h-auto w-full rounded-2xl bg-secondary p-2 ">
         <div className=" flex flex-col items-center">
           <div className="w-full h-10 flex items-center  justify-between ">
             <div>
@@ -27,14 +27,14 @@ function ProductCard({ item }: cardProps) {
             </div>
           </div>
           {/* img  */}
-          <div className="bg-gray-300 w-[270px] h-[280px] flex justify-center  ">
+          <div className="bg-gray-300 w-[270px] h-[280px] flex justify-center mb-[45px] ">
             <img src="" alt="products" />
           </div>
         </div>
       </div>
 
       {/* Product-name and price */}
-      <div className=" h-[110px]  w-[393px] flex justify-center mt-2  ">
+      <div className=" h-[110px]  w-full flex justify-center mt-2  ">
         <div className="w-[350px]  ">
           <div className="flex justify-between  ">
             <p>{item.title}</p>

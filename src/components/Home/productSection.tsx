@@ -11,7 +11,7 @@ type CardGridProps = {
 // const ProductSection: React.FC<CardGridProps> = ({ data }) => {
 function ProductSection({ data }: CardGridProps) {
   return (
-    <div className="h-full w-full grid md:grid-cols-3 grid-cols-2 ">
+    <div className="h-full w-full grid md:grid-cols-3 grid-cols-2 gap-5 ">
       {/* CARD-1 */}
       {data.map((item) => (
         <ProductCard item={item} />
