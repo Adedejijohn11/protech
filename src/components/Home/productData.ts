@@ -50,7 +50,7 @@ export const productData = [
     productName: "Hair dryer",
   },
   {
-    id: 3,
+    id: 6,
     discount: undefined,
     // image:
     title: "APPLE",
