@@ -1,4 +1,3 @@
-import React from "react";
 import ProductCard from "./productCard";
 import type { cardData } from "../../types/global";
 
