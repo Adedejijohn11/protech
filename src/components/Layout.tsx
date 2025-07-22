@@ -34,14 +34,9 @@ const Layout = () => {
       >
         <MenuBar close={closeAll} uniToggle={uniToggle} />
       </div>
-      {/* Loginbar */}
-      <div
-        className={`absolute top-0 right-0 z-50 h-full w-full inset-0 bg-white/30 ${
-          showLogin ? "flex" : "hidden"
-        }`}
-      >
-        <Loginbar close={closeAll} />
-      </div>
+      {/* LoginModal */}
+
+      <Loginbar uniToggle={uniToggle} showLogin={showLogin} />
 
       <main className="h-[calc(100vh-80px)] w-full flex flex-col">
         <div className=" h-full w-full flex flex-row">
