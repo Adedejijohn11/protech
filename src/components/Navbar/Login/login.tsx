@@ -1,0 +1,91 @@
+import React from "react";
+import { IoMdClose } from "react-icons/io";
+import { FaFacebook } from "react-icons/fa";
+import { FiEye, FiEyeOff } from "react-icons/fi";
+
+type LoginProps = {
+  close: () => void;
+};
+
+const Loginbar = ({ close }: LoginProps) => {
+  return (
+    <div className=" absolute right-0 h-full w-[70%] lg:w-[30%] flex items-center justify-center text-black bg-white">
+      <div className=" h-[98%] w-[95%]">
+        <button
+          onClick={close}
+          className="p-[2px] mt-1 border-none text-2xl bg-white focus:outline-none"
+        >
+          <IoMdClose />
+        </button>
+        <div className="flex flex-col items-center  justify-center">
+          <div className="h-full w-[90%] flex flex-col items-center  mt-6">
+            <div className="flex flex-col items-center ">
+              <h1 className="text-[25px] font-bold  lg:text-[27px] mb-4">
+                Login or create your account
+              </h1>
+              <div className=" flex flex-col items-center ">
+                <button className=" flex items-center justify-center gap-10 w-[370px] lg:w-[390px] py-3 bg-white border-black">
+                  <FaFacebook className="text-blue-600 text-2xl" />
+                  CONTINUE WITH FACEBOOK
+                </button>
+                <p className="w-[350px] mt-4 text-center">
+                  By login with social ID, I agree to link my account in
+                  accordance with the <span>Privacy Policy</span>
+                </p>
+                <p className="my-10">Or</p>
+              </div>
+            </div>
+            <div className="flex flex-col w-full">
+              <form className="flex flex-col gap-8" action="">
+                <div className="relative flex flex-col">
+                  <input
+                    type="text"
+                    name="email"
+                    placeholder="E-mail"
+                    required
+                    className="h-[40px] bg-white border-gray-300 border-2 px-3 text-black"
+                  />
+                  <div className="absolute right-2 top-3  h-[20px] w-[20px] rounded-full border-2 border-gray-600"></div>
+                </div>
+                <div className="relative flex flex-col">
+                  <input
+                    type="text"
+                    name="Password"
+                    placeholder="Password"
+                    required
+                    className="h-[40px] bg-white border-gray-300 border-2 px-3 text-black"
+                  />
+                  <div className="absolute right-2 top-3 h-[20px] w-[20px] rounded-full border-2 border-gray-600">
+                    <FiEye />
+                  </div>
+                </div>
+              </form>
+              <div className="my-10 flex justify-between">
+                <div className="flex items-center">
+                  <input
+                    className="h-6 w-4 mr-[10px] bg-white "
+                    type="checkbox"
+                  />
+                  <p className="text-[14px]">Keep the session</p>
+                </div>
+                <a href="/" className="text-[14px]">
+                  Forgot your password?
+                </a>
+              </div>
+              <button className="mb-6 text-white">LOGIN</button>
+
+              <p className=" text-center">
+                Don't have account?
+                <span className="text-black font-bold">
+                  <a href="/">Sign up</a>
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Loginbar;

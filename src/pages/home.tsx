@@ -14,19 +14,19 @@ function Home() {
   return (
     <div className="relative flex flex-row h-full w-full">
       <button
-        className="absolute top-[56px] left-0 z-50 py-[6px] px-[12px] rounded-l-none rounded-r-md lg:hidden"
+        className="absolute top-[56px] left-0 z-30 py-[6px] px-[12px] rounded-l-none rounded-r-md lg:hidden"
         onClick={toggleSidebar}
       >
         <FaFilter />
       </button>
 
       <div
-        className={`z-50 absolute md:absolute lg:static h-[100%] w-[80%] lg:w-[20%] ${
+        className={`z-40 absolute md:absolute lg:static h-[100%] w-[80%] lg:w-[20%] ${
           isSidebarOpen ? "flex" : "hidden"
         }  lg:flex bg-primary lg:bg-transparent p-[5px] overflow-y-scroll no-scrollbar`}
       >
         <button
-          className="py-[6px] px-[12px] lg:hidden absolute top-[56px] right-0 z-50 rounded-l-md rounded-r-none"
+          className="py-[6px] px-[12px] lg:hidden absolute top-[56px] right-0 z-40 rounded-l-md rounded-r-none"
           onClick={toggleSidebar}
         >
           <MdKeyboardDoubleArrowLeft />
