@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 import Navbar from "./Navbar/navbar";
 import { useState } from "react";
 import MenuBar from "./Navbar/menubar";
-import Loginbar from "./Navbar/Login/login";
+import Loginbar from "./Auth/login";
 
 const Layout = () => {
   const [showMenu, setShowMenu] = useState(false);

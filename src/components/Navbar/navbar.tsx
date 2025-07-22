@@ -17,7 +17,9 @@ function Navbar({ uniToggle }: NavbarProps) {
     <nav className="flex flex-col justify-between  h-20 w-full md:w-full lg:w-full py-2  lg:py-5 bg-secondary  ">
       <div className="flex flex-row  justify-between">
         <div className=" w-[30%] lg:w-[50%] flex flex-row items-center justify-start md:justify-start lg:justify-between  ml-[5%] md:ml-[5%] lg:ml-[40px] b ">
-          <h1 className="text-xl md:text-2xl lg:text-2xl">Protech</h1>
+          <Link to="/" className="text-xl md:text-2xl lg:text-2xl">
+            Protech
+          </Link>
 
           <button className=" hidden md:hidden lg:flex items-center py-2 px-6 rounded-full border border-gray-500 ">
             <div className="text-2xl mr-3">

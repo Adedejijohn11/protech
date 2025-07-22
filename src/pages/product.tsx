@@ -7,16 +7,16 @@ function Product() {
   return (
     <div className="h-full w-full  flex flex-col p-[12px] ">
       <p>Home - Catalog - Boose - Qiet Place Speakers</p>
-      <div className=" flex flex-row  h-full w-full mt-[12px]">
-        <div className="relative h-full w-[60%] flex flex-col items-center justify-center ">
-          <div className="h-[60%] w-[60%] bg-gray-500"></div>
+      <div className=" flex flex-col lg:flex-row h-auto lg:h-full w-full mt-[12px]">
+        <div className="relative h-[500px] md:h-[700px] lg:h-full w-full lg:w-[60%] flex flex-col items-center justify-center  ">
+          <div className="h-[60%] md:h-[60%] w-[72%] md:w-[60%] bg-gray-500"></div>
           <div className=" absolute top-[14px] left-[14px] py-[8px] px-[12px] text-black font-semibold rounded-xl bg-hightlight">
             Bestseller
           </div>
           <div className="  absolute top-[14px] right-[14px] text-xl p-[12px] rounded-full bg-secondary">
             <GoHeartFill />
           </div>
-          <div className=" absolute top-[38%] left-[-20px] flex flex-col items-center">
+          <div className=" absolute top-[38%] left-[-35px] md:left-[-20px] flex flex-col items-center">
             <div className="p-[15px] rounded-full bg-blue-950" />
             <div className="p-[15px] rounded-full bg-white my-[8px]" />
             <div className="p-[15px] rounded-full bg-gray-700" />
@@ -32,7 +32,7 @@ function Product() {
             <div className=" h-[65px] w-[65px] rounded-xl border border-hightlight/60 bg-secondary"></div>
           </div>
         </div>
-        <div className=" h-full w-[40%] flex flex-col items-start py-[30px] px-[60px] overflow-y-scroll no-scrollbar ">
+        <div className=" h-auto lg:h-full w-full lg:w-[40%] flex flex-col items-start py-[30px] px-[5%] md:px-[20px] lg:px-[60px] overflow-hidden lg:overflow-y-scroll no-scrollbar  ">
           <p className="text-white/50">Bose</p>
           <h1 className="text-4xl font-semibold mt-[20px]">
             QUIETCONFORT ULTRA WIRELESS NOISE CANCELLING EARBUDS
