@@ -10,9 +10,10 @@ import Search from "./search";
 
 type NavbarProps = {
   uniToggle: (menu: string) => void;
+  showSearchInput: boolean;
 };
 
-function Navbar({ uniToggle }: NavbarProps) {
+function Navbar({ uniToggle, showSearchInput }: NavbarProps) {
   return (
     <nav className="flex flex-col justify-between  h-20 w-full md:w-full lg:w-full py-2  lg:py-5 bg-secondary  ">
       <div className="flex flex-row  justify-between">
@@ -36,12 +37,16 @@ function Navbar({ uniToggle }: NavbarProps) {
             <a href="/newarrivals">NewArrivals</a>
           </div>
         </div>
-        <div className="relative  flex flex-row items-center justify-end w-[60%] lg:w-[50%]  mr-[5%] md:mr-[5%] lg:mr-[40px]  ">
-          <div className="   hidden  lg:flex items-center justify-center   ">
-            <div>
-              <Search />
+        <div className="  flex flex-row items-center justify-end w-[60%] lg:w-[50%]  mr-[5%] md:mr-[5%] lg:mr-[40px]  ">
+          <div className="relative hidden lg:flex items-center justify-center   ">
+            <div className="absolute right-0 top-[-1] ">
+              <Search showSearchInput={showSearchInput} uniToggle={uniToggle} />
             </div>
-            <div className="mr-0 md:mr-4 lg:mr-4 ">
+
+            <div
+              className="mr-0 md:mr-4 lg:mr-4 "
+              onClick={() => uniToggle("search_input")}
+            >
               <FiSearch />
             </div>
           </div>

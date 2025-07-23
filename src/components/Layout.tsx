@@ -7,36 +7,39 @@ import Loginbar from "./Auth/login";
 const Layout = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
+  const [showSearchInput, setShowSearchInput] = useState(false);
 
   const uniToggle = (menu: string) => {
-    if (menu === "mobile_menu") {
-      setShowMenu(!showMenu);
-      setShowLogin(false);
-    } else {
-      setShowLogin(!showLogin);
-      setShowMenu(false);
-    }
-  };
+    switch (menu) {
+      case "mobile_menu":
+        setShowMenu(!showMenu);
+        setShowLogin(false);
+        break;
 
-  const closeAll = () => {
-    setShowLogin(false);
-    setShowMenu(false);
+      case "login_menu":
+        setShowLogin(!showLogin);
+        setShowMenu(false);
+        break;
+
+      case "search_input":
+        setShowSearchInput(!showSearchInput);
+        break;
+
+      default:
+        setShowMenu(false);
+        setShowLogin(false);
+        setShowSearchInput(false);
+    }
   };
 
   return (
     <div className="relative h-screen w-screen">
-      <Navbar uniToggle={uniToggle} />
-      {/* Menubar */}
-      <div
-        className={`absolute lg:hidden top-0 z-50  h-full w-full inset-0 bg-black/40 shadow-lg ${
-          showMenu ? "flex" : "hidden"
-        }`}
-      >
-        <MenuBar close={closeAll} uniToggle={uniToggle} />
-      </div>
+      <Navbar uniToggle={uniToggle} showSearchInput={showSearchInput} />
+      {/* MenuModal*/}
+      <MenuBar showMenu={showMenu} uniToggle={uniToggle} />
       {/* LoginModal */}
-
       <Loginbar uniToggle={uniToggle} showLogin={showLogin} />
+      {/* SearchModal */}
 
       <main className="h-[calc(100vh-80px)] w-full flex flex-col">
         <div className=" h-full w-full flex flex-row">

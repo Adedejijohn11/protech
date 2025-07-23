@@ -26,7 +26,7 @@ function Home() {
         }  lg:flex bg-primary lg:bg-transparent p-[5px] overflow-y-scroll no-scrollbar`}
       >
         <button
-          className="py-[6px] px-[12px] lg:hidden absolute top-[56px] right-0 z-40 rounded-l-md rounded-r-none"
+          className="py-[6px] px-[12px] lg:hidden absolute top-[56px] right-0 z-30 rounded-l-md rounded-r-none"
           onClick={toggleSidebar}
         >
           <MdKeyboardDoubleArrowLeft />

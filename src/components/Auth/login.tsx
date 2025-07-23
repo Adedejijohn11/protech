@@ -18,14 +18,14 @@ const Loginbar = ({ uniToggle, showLogin }: NavbarProps) => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => uniToggle("login_menu")}
-            className={`absolute top-0 right-0 z-40 h-full w-full inset-0 bg-white/30 lg:bg-transparent`}
+            className={`absolute top-0 right-0 z-40 h-full w-full inset-0 bg-white/30 lg:bg-transparent  `}
           ></motion.div>
           <motion.div
-            initial={{ scale: 0, x: "100%" }}
-            animate={{ scale: 1, x: 0 }}
-            exit={{ scale: 0, x: "100%" }}
+            initial={{ x: "100%" }}
+            animate={{ x: "0" }}
+            exit={{ x: "100%" }}
             transition={{ type: "tween", duration: 0.8 }}
-            className="z-50 absolute top-0 right-0 h-full w-[70%] lg:w-[30%] flex items-center justify-center text-black bg-white"
+            className="z-50 absolute top-0 right-0 h-full w-[70%] lg:w-[30%] flex items-center justify-center   text-black bg-white"
           >
             <div className=" h-[98%] w-[95%]">
               <button
