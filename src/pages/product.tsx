@@ -2,8 +2,21 @@ import { GoHeartFill } from "react-icons/go";
 import { FiShoppingCart } from "react-icons/fi";
 import { FaStar } from "react-icons/fa";
 import { IoIosArrowForward } from "react-icons/io";
+import { useParams } from "react-router-dom";
+import { productData } from "../components/Home/productData";
 
 function Product() {
+  const { id } = useParams<{ id: string }>();
+
+  const productId = Number(id);
+
+  // Here you would typically fetch the product details using the id
+  const productDetails = productData?.find(
+    (product: any) => product.id === productId
+  );
+
+  console.log("Product Details:", productDetails);
+
   return (
     <div className="h-full w-full  flex flex-col p-[12px] ">
       <p>Home - Catalog - Boose - Qiet Place Speakers</p>
@@ -33,46 +46,36 @@ function Product() {
           </div>
         </div>
         <div className=" h-auto lg:h-full w-full lg:w-[40%] flex flex-col items-start py-[30px] px-[5%] md:px-[20px] lg:px-[60px] overflow-hidden lg:overflow-y-scroll no-scrollbar  ">
-          <p className="text-white/50">Bose</p>
+          <p className="text-white/50">{productDetails?.make}</p>
           <h1 className="text-4xl font-semibold mt-[20px]">
-            QUIETCONFORT ULTRA WIRELESS NOISE CANCELLING EARBUDS
+            {productDetails?.productName}
           </h1>
           <div className=" w-full flex flex-row items-center justify-between mt-[20px] ">
             <p className="flex flex-row items-center gap-2 ">
               <div className="text-yellow-500">
                 <FaStar />
               </div>
-              4.2
+              {productDetails?.starRating.toFixed(1)}
             </p>
             <p className="flex flex-row items-center gap-2 ">
-              12,345 reviews{" "}
+              {productDetails?.reviews} reviews{" "}
               <div>
                 <IoIosArrowForward />
               </div>
             </p>
           </div>
           <p className="text-gray-500 mt-[30px]">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum, quo
-            magni iste voluptatibus voluptates quisquam labore unde, architecto
-            a aperiam sunt adipisci nesciunt porro. Eum, vel! Nostrum natus
-            sequi assumenda?
+            {productDetails?.description}
           </p>
-          <p className="text-4xl mt-[30px] ">$450.99</p>
+          <p className="text-4xl mt-[30px] ">{productDetails?.price}</p>
           <div className="flex flex-col mt-[30px]">
             <p>Key Features</p>
             <ul className="list-disc pl-5 ">
-              <li>
-                Sound Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Hic tenetur magni voluptatem, modi veniam provident, ducimus
-              </li>
-              <li>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi
-                sunt, eaque obcaecati dolorem blanditiis ad sequi quia nihil vel
-              </li>
-              <li>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Recusandae labore aperiam dolor explicabo a asperiores ea
-              </li>
+              {productDetails?.keyFeatures?.map(
+                (feature: string, index: number) => (
+                  <li key={index}>{feature}</li>
+                )
+              )}
             </ul>
           </div>
           <div className=" w-full flex flex-col gap-5 mt-[50px]">
