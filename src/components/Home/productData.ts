@@ -15,7 +15,11 @@ export const productData = [
     oldPrice: 1056.0,
     description: "High-quality coffee machine with advanced features",
     productName: "Coffee Machine",
+<<<<<<< HEAD
     isNewArrival: false,
+=======
+    category: "kitchen",
+>>>>>>> dev
   },
   {
     id: 2,
@@ -39,6 +43,7 @@ export const productData = [
       "A17 Pro chip with 5-core GPU",
       "Pro camera system with 48MP main camera",
     ],
+    category: "smartphones",
   },
   {
     id: 3,
@@ -62,6 +67,7 @@ export const productData = [
       "10 power levels",
       "Auto-cook programs for convenience",
     ],
+    category: "Kitchen",
   },
   {
     id: 4,
@@ -85,6 +91,7 @@ export const productData = [
       "Automatic shut-off for safety",
       "360-degree swivel base for easy pouring",
     ],
+    category: "gameconsole",
   },
   {
     id: 5,
@@ -108,6 +115,7 @@ export const productData = [
       "Multiple heat and speed settingkls",
       "Cool shot button for setting styles",
     ],
+    category: "kitchen",
   },
   {
     id: 6,
@@ -200,6 +208,7 @@ export const productData = [
       "Spatial audio with dynamic head tracking",
       "Custom acoustic design for immersive sound",
     ],
+    category: "smartphones",
   },
 ];
 

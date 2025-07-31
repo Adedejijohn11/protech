@@ -4,9 +4,11 @@ import { FaStar } from "react-icons/fa";
 import { IoIosArrowForward } from "react-icons/io";
 import { useParams } from "react-router-dom";
 import { productData } from "../components/Home/productData";
+import { useEffect, useState } from "react";
 
 function Product() {
   const { id } = useParams<{ id: string }>();
+  const [currentImage, setCurrentImage] = useState("");
 
   const productId = Number(id);
 
@@ -15,7 +17,15 @@ function Product() {
     (product: any) => product.id === productId
   );
 
-  console.log("Product Details:", productDetails);
+  const setNewImage = (image: string) => {
+    setCurrentImage(image);
+  };
+
+  useEffect(() => {
+    if (productDetails?.image) {
+      setCurrentImage(productDetails.image[0]);
+    }
+  }, [productDetails]);
 
   return (
     <div className="h-full w-full  flex flex-col p-[12px] ">
@@ -23,11 +33,13 @@ function Product() {
       <div className=" flex flex-col lg:flex-row h-auto lg:h-full w-full mt-[12px]">
         <div className="relative h-[500px] md:h-[700px] lg:h-full w-full lg:w-[60%] flex flex-col items-center justify-center  ">
           <div className="h-[60%] md:h-[60%] w-[72%] md:w-[60%] bg-gray-500">
-            <img
-              className=" h-full w-full"
-              src={productDetails?.image[0]}
-              alt=""
-            />
+            {currentImage && (
+              <img
+                className=" h-full w-full"
+                src={currentImage}
+                alt="products"
+              />
+            )}
           </div>
           <div className=" absolute top-[14px] left-[14px] py-[8px] px-[12px] text-black font-semibold rounded-xl bg-hightlight">
             Bestseller
@@ -44,11 +56,26 @@ function Product() {
             </button>
             <div className="p-[15px] rounded-full bg-gray-400" />
           </div>
-          <div className=" bg-red-900 absolute bottom-[14px] left-[14px] flex flex-row items-center gap-5 ">
-            <div className=" h-[65px] w-[65px] rounded-xl border-2 border-hightlight bg-secondary"></div>
-            <div className=" h-[65px] w-[65px] rounded-xl border border-hightlight/60 bg-secondary"></div>
-            <div className=" h-[65px] w-[65px] rounded-xl border border-hightlight/60 bg-secondary"></div>
-            <div className=" h-[65px] w-[65px] rounded-xl border border-hightlight/60 bg-secondary"></div>
+          <div className=" absolute bottom-[14px] left-[14px] flex flex-row items-center gap-5 ">
+            {productDetails?.image?.map((image: string, index: number) => {
+              return (
+                <div
+                  key={index}
+                  onClick={() => setNewImage(image)}
+                  className={` h-[65px] w-[65px] rounded-xl ${
+                    currentImage === image
+                      ? " border-4 border-hightlight"
+                      : " border-2 border-hightlight/60"
+                  } bg-secondary overflow-hidden`}
+                >
+                  <img
+                    className=" h-full w-full"
+                    src={image}
+                    alt={`product-thumbnail-${index}`}
+                  />
+                </div>
+              );
+            })}
           </div>
         </div>
         <div className=" h-auto lg:h-full w-full lg:w-[40%] flex flex-col items-start py-[30px] px-[5%] md:px-[20px] lg:px-[60px] overflow-hidden lg:overflow-y-scroll no-scrollbar  ">
@@ -57,18 +84,18 @@ function Product() {
             {productDetails?.productName}
           </h1>
           <div className=" w-full flex flex-row items-center justify-between mt-[20px] ">
-            <p className="flex flex-row items-center gap-2 ">
-              <span className="text-yellow-500">
+            <div className="flex flex-row items-center gap-2 ">
+              <div className="text-yellow-500">
                 <FaStar />
-              </span>
+              </div>
               {productDetails?.starRating.toFixed(1)}
-            </p>
-            <p className="flex flex-row items-center gap-2 ">
+            </div>
+            <div className="flex flex-row items-center gap-2 ">
               {productDetails?.reviews} reviews{" "}
-              <span>
+              <div>
                 <IoIosArrowForward />
-              </span>
-            </p>
+              </div>
+            </div>
           </div>
           <p className="text-gray-500 mt-[30px]">
             {productDetails?.description}
