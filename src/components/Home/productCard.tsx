@@ -1,8 +1,8 @@
-import React from "react";
 import { FaStar } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa6";
 import { TbCurrencyDollar } from "react-icons/tb";
 import type { cardData } from "../../types/global";
+import { Link } from "react-router-dom";
 
 type cardProps = {
   item: cardData;
@@ -10,9 +10,12 @@ type cardProps = {
 
 function ProductCard({ item }: cardProps) {
   return (
-    <div className=" h-[480px] w-[393px] flex flex-col items-center ">
+    <Link
+      to={`product/${item.id}`}
+      className=" h-[480px] w-full flex flex-col items-center"
+    >
       {/*product-item */}
-      <div className="h-[370px] w-[393px] rounded-2xl bg-secondary p-2 ">
+      <div className="h-auto w-full rounded-2xl bg-secondary p-2 ">
         <div className=" flex flex-col items-center">
           <div className="w-full h-10 flex items-center  justify-between ">
             <div>
@@ -27,17 +30,21 @@ function ProductCard({ item }: cardProps) {
             </div>
           </div>
           {/* img  */}
-          <div className="bg-gray-300 w-[270px] h-[280px] flex justify-center  ">
-            <img src="" alt="products" />
+          <div className="bg-gray-300 w-[270px] h-[280px] flex justify-center mb-[45px] ">
+            <img
+              className=" h-full w-full"
+              src={item.image[0]}
+              alt="products"
+            />
           </div>
         </div>
       </div>
 
       {/* Product-name and price */}
-      <div className=" h-[110px]  w-[393px] flex justify-center mt-2  ">
+      <div className=" h-[110px]  w-full flex justify-center mt-2  ">
         <div className="w-[350px]  ">
           <div className="flex justify-between  ">
-            <p>{item.title}</p>
+            <p>{item.make}</p>
             <p className="flex flex-row items-center justify-center ">
               <FaStar className="text-hightlight mr-1" />
               <span className="text-[18px]">{item.starRating.toFixed(1)}</span>
@@ -62,7 +69,7 @@ function ProductCard({ item }: cardProps) {
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
 
