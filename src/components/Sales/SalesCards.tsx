@@ -8,7 +8,7 @@ type cardProps = {
   item: cardData;
 };
 
-function ProductCard({ item }: cardProps) {
+function SalesCard({ item }: cardProps) {
   return (
     <div className=" h-[480px] w-full flex flex-col items-center">
       {/*product-item */}
@@ -76,4 +76,4 @@ function ProductCard({ item }: cardProps) {
   );
 }
 
-export default ProductCard;
+export default SalesCard;

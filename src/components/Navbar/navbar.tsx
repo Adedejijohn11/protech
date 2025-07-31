@@ -30,16 +30,17 @@ function Navbar({ uniToggle, showSearchInput }: NavbarProps) {
           </button>
 
           <div className=" hidden md:hidden lg:flex">
-            <a href="/bestsellers">Bestsellers</a>
-            <a className="mx-6" href="/Sales">
+            <Link to="/">Bestsellers</Link>
+            <Link to="sales" className="mx-6">
               Sales
-            </a>
-            <a href="/newarrivals">NewArrivals</a>
+            </Link>
+
+            <Link to="newarrivals">NewArrivals</Link>
           </div>
         </div>
         <div className="  flex flex-row items-center justify-end w-[60%] lg:w-[50%]  mr-[5%] md:mr-[5%] lg:mr-[40px]  ">
           <div className="relative hidden lg:flex items-center justify-center   ">
-            <div className="absolute right-0 top-[-1] ">
+            <div className="absolute right-0 top-0 ">
               <Search showSearchInput={showSearchInput} uniToggle={uniToggle} />
             </div>
 

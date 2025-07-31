@@ -3,8 +3,19 @@ import { IoIosArrowDown } from "react-icons/io";
 import { IoIosArrowUp } from "react-icons/io";
 import { GoSearch } from "react-icons/go";
 import { AnimatePresence, motion } from "framer-motion";
+import { useLocation } from "react-router-dom";
 
 function SideBar() {
+  const location = useLocation();
+
+  let label = "Bestsellers";
+
+  if (location.pathname.includes("sales")) {
+    label = "On Sales";
+  } else if (location.pathname.includes("newarrivals")) {
+    label = "New Arrivals";
+  }
+
   return (
     <AnimatePresence initial={false}>
       <motion.div
@@ -14,7 +25,7 @@ function SideBar() {
         transition={{ type: "tween", duration: 0.8 }}
         className=" flex flex-col p-[15px] h-full w-full"
       >
-        <h1 className="text-4xl">Bestsellers</h1>
+        <h1 className="text-4xl">{label}</h1>
         <div className=" flex flex-row items-start mt-[20px]">
           <a className="text-gray-600" href="/home">
             Home

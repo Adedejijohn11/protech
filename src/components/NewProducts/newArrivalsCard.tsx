@@ -1,3 +1,4 @@
+import React from "react";
 import { FaStar } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa6";
 import { TbCurrencyDollar } from "react-icons/tb";
@@ -8,7 +9,7 @@ type cardProps = {
   item: cardData;
 };
 
-function ProductCard({ item }: cardProps) {
+const NewArrivalsCard = ({ item }: cardProps) => {
   return (
     <div className=" h-[480px] w-full flex flex-col items-center">
       {/*product-item */}
@@ -74,6 +75,6 @@ function ProductCard({ item }: cardProps) {
       </div>
     </div>
   );
-}
+};
 
-export default ProductCard;
+export default NewArrivalsCard;

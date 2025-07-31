@@ -66,6 +66,12 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+/* .active {
+  color: var(--primary-color);
+  background-color: var(--hightlight-color);
+  border-radius: 6px;
+} */
+
 @layer utilities {
   /* Chrome, Safari and Opera */
   .no-scrollbar::-webkit-scrollbar {

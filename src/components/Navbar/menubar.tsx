@@ -20,7 +20,7 @@ const MenuBar = ({ showMenu, uniToggle }: MenuProps) => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => uniToggle("mobile_menu")}
-            className={`absolute lg:hidden top-0 z-40  h-full w-full inset-0 bg-black/40 shadow-lg `}
+            className={`absolute lg:hidden top-0 z-40 h-full w-full inset-0 bg-black/40 shadow-lg `}
           ></motion.div>
           <motion.div
             initial={{ x: "100%" }}
@@ -51,13 +51,10 @@ const MenuBar = ({ showMenu, uniToggle }: MenuProps) => {
                   Catalog
                 </button>
                 <div className="flex flex-col gap-8 ml-2">
-                  <Link
-                    to="/bestsellers"
-                    onClick={() => uniToggle("mobile_menu")}
-                  >
+                  <Link to="/" onClick={() => uniToggle("mobile_menu")}>
                     Bestsellers
                   </Link>
-                  <Link to="/SLinkles" onClick={() => uniToggle("mobile_menu")}>
+                  <Link to="sales" onClick={() => uniToggle("mobile_menu")}>
                     Sales
                   </Link>
                   <Link

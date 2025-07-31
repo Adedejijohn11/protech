@@ -25,9 +25,9 @@ const Loginbar = ({ uniToggle, showLogin }: NavbarProps) => {
             animate={{ x: "0" }}
             exit={{ x: "100%" }}
             transition={{ type: "tween", duration: 0.8 }}
-            className="z-50 absolute top-0 right-0 h-full w-[70%] lg:w-[30%] flex items-center justify-center   text-black bg-white"
+            className="z-50 absolute top-0 right-0 h-full w-[100%] md:w-[70%] lg:w-[30%] flex items-center justify-center   text-black bg-white"
           >
-            <div className=" h-[98%] w-[95%]">
+            <div className=" h-[98%] w-[95%] bg-slate-500">
               <button
                 onClick={() => uniToggle("login_menu")}
                 className="p-[2px] mt-1 border-none text-2xl bg-white focus:outline-none"
@@ -35,24 +35,24 @@ const Loginbar = ({ uniToggle, showLogin }: NavbarProps) => {
                 <IoMdClose />
               </button>
               <div className="flex flex-col items-center  justify-center">
-                <div className="h-full w-[90%] flex flex-col items-center  mt-6">
+                <div className="h-full w-[90%] flex flex-col items-center mt-6">
                   <div className="flex flex-col items-center ">
-                    <h1 className="text-[25px] font-bold  lg:text-[27px] mb-4">
+                    <h1 className="text-[20px] font-bold  lg:text-[27px] mb-4">
                       Login or create your account
                     </h1>
                     <div className=" flex flex-col items-center ">
-                      <button className=" flex items-center justify-center gap-10 w-[370px] lg:w-[390px] py-3 bg-white border-black">
+                      <button className=" flex items-center justify-center gap-5 md:gap-10 h-11  md:h-auto w-[300px] md:w-[370px] lg:w-[390px] py-3 bg-white border-black">
                         <FaFacebook className="text-blue-600 text-2xl" />
                         CONTINUE WITH FACEBOOK
                       </button>
-                      <p className="w-[350px] mt-4 text-center">
+                      <p className="w-[300px] md:w-[350px] mt-4 text-center text-[14px]">
                         By login with social ID, I agree to link my account in
                         accordance with the <span>Privacy Policy</span>
                       </p>
-                      <p className="my-10">Or</p>
+                      <p className="my-5 lg:my-10">Or</p>
                     </div>
                   </div>
-                  <div className="flex flex-col w-full">
+                  <div className="flex flex-col w-full ">
                     <form className="flex flex-col gap-8" action="">
                       <div className="relative flex flex-col">
                         <input
@@ -77,15 +77,17 @@ const Loginbar = ({ uniToggle, showLogin }: NavbarProps) => {
                         </div>
                       </div>
                     </form>
-                    <div className="my-10 flex justify-between">
+                    <div className="my-6 md:my-10 flex items-center justify-between">
                       <div className="flex items-center">
                         <input
                           className="h-6 w-4 mr-[10px] bg-white "
                           type="checkbox"
                         />
-                        <p className="text-[14px]">Keep the session</p>
+                        <p className="text-[13px] md:text-[14px]">
+                          Keep the session
+                        </p>
                       </div>
-                      <a href="/" className="text-[14px]">
+                      <a href="/" className="text-[12px] md:text-[14px]">
                         Forgot your password?
                       </a>
                     </div>
