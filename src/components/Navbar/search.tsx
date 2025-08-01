@@ -14,9 +14,9 @@ function Search({ uniToggle, showSearchInput }: SearchProps) {
       <>
         {showSearchInput && (
           <motion.div
-            initial={{ opacity: 0, x: "100%" }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: "100%" }}
+            initial={{ opacity: 0, scale: 0, x: "100%" }}
+            animate={{ opacity: 1, scale: 1, x: 0 }}
+            exit={{ opacity: 0, scale: 1, x: "100%" }}
             transition={{ type: "tween", duration: 0.8 }}
             className="flex items-center bg-white px-2 "
           >

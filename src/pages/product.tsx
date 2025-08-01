@@ -30,9 +30,9 @@ function Product() {
   return (
     <div className="h-full w-full  flex flex-col p-[12px] ">
       <p>Home - Catalog - Boose - Qiet Place Speakers</p>
-      <div className=" flex flex-col lg:flex-row h-auto lg:h-full w-full mt-[12px]">
-        <div className="relative h-[500px] md:h-[700px] lg:h-full w-full lg:w-[60%] flex flex-col items-center justify-center  ">
-          <div className="h-[60%] md:h-[60%] w-[72%] md:w-[60%] bg-gray-500">
+      <div className="  flex flex-col lg:flex-row h-auto lg:h-full w-full mt-[12px]">
+        <div className=" relative h-[600px] md:h-[700px] lg:h-full w-full lg:w-[60%] flex flex-col items-center justify-center ">
+          <div className="h-[75%] md:h-[75%] w-[72%] md:w-[60%] ">
             {currentImage && (
               <img
                 className=" h-full w-full"
@@ -62,7 +62,7 @@ function Product() {
                 <div
                   key={index}
                   onClick={() => setNewImage(image)}
-                  className={` h-[65px] w-[65px] rounded-xl ${
+                  className={` h-[50px] w-[50px] rounded-xl ${
                     currentImage === image
                       ? " border-4 border-hightlight"
                       : " border-2 border-hightlight/60"

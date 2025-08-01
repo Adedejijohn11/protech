@@ -9,8 +9,8 @@ export type cardData = {
   oldPrice?: number;
   description: string;
   productName: string;
+  category: string;
+  reviews?: number;
   keyFeatures?: string[];
   isNewArrival: boolean;
-  category?: string;
-  reviews?: number;
 };
