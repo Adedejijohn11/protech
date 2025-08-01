@@ -15,11 +15,8 @@ export const productData = [
     oldPrice: 1056.0,
     description: "High-quality coffee machine with advanced features",
     productName: "Coffee Machine",
-<<<<<<< HEAD
-    isNewArrival: false,
-=======
     category: "kitchen",
->>>>>>> dev
+    isNewArrival: false,
   },
   {
     id: 2,
@@ -91,7 +88,7 @@ export const productData = [
       "Automatic shut-off for safety",
       "360-degree swivel base for easy pouring",
     ],
-    category: "gameconsole",
+    category: "kitchen",
   },
   {
     id: 5,
@@ -139,6 +136,7 @@ export const productData = [
       "Spatial audio with dynamic head tracking",
       "Custom acoustic design for immersive sound",
     ],
+    category: "smartphones",
   },
   {
     id: 7,
@@ -162,12 +160,13 @@ export const productData = [
       "Spatial audio with dynamic head tracking",
       "Custom acoustic design for immersive sound",
     ],
+    category: "smartphones",
   },
   {
     id: 8,
     discount: undefined,
     image: [
-      "/assets/ps.jpg",
+      "/assets/ps.png",
       "/assets/iphone.jpg",
       "/assets/microwave.jpg",
       "/assets/coffemachine-4.jpg",
@@ -185,6 +184,7 @@ export const productData = [
       "Spatial audio with dynamic head tracking",
       "Custom acoustic design for immersive sound",
     ],
+    category: "smartphones",
   },
   {
     id: 9,
@@ -208,71 +208,6 @@ export const productData = [
       "Spatial audio with dynamic head tracking",
       "Custom acoustic design for immersive sound",
     ],
-    category: "smartphones",
+    category: "gameconsole",
   },
 ];
-
-// export const SalesData = [
-//   {
-//     id: 1,
-//     discount: "Sale 15%",
-//     image: [
-//       "/assets/coffemachine-1.jpg",
-//       "/assets/coffemachine-2.jpg",
-//       "/assets/coffemachine-3.jpg",
-//       "/assets/coffemachine-4.jpg",
-//     ],
-//     make: "SMEG",
-//     starRating: 5.0,
-//     reviews: 5398,
-//     price: 985.99,
-//     oldPrice: 1056.0,
-//     description: "High-quality coffee machine with advanced features",
-//     productName: "Coffee Machine",
-//   },
-
-//   {
-//     id: 4,
-//     discount: "Sale 10%",
-//     image: [
-//       "/assets/ElectricKettle.jpg",
-//       "/assets/iphone.jpg",
-//       "/assets/microwave.jpg",
-//       "/assets/coffemachine-4.jpg",
-//     ],
-//     make: "SMEG",
-//     starRating: 660,
-//     reviews: 6.0,
-//     price: 705.09,
-//     oldPrice: 900.0,
-//     description: "High-quality electric kettle with fast boiling",
-//     productName: "Electric kettle",
-//     keyFeatures: [
-//       "1.7L capacity",
-//       "Automatic shut-off for safety",
-//       "360-degree swivel base for easy pouring",
-//     ],
-//   },
-//   {
-//     id: 5,
-//     discount: "Sale 15%",
-//     image: [
-//       "/assets/Hairdryer.jpg",
-//       "/assets/iphone.jpg",
-//       "/assets/microwave.jpg",
-//       "/assets/coffemachine-4.jpg",
-//     ],
-//     make: "SMEG",
-//     starRating: 3.0,
-//     reviews: 340,
-//     price: 345.65,
-//     oldPrice: 500.0,
-//     description: "Compact hair dryer with multiple heat settings",
-//     productName: "Hair dryer",
-//     keyFeatures: [
-//       "Compact and lightweight design",
-//       "Multiple heat and speed settingkls",
-//       "Cool shot button for setting styles",
-//     ],
-//   },
-// ];

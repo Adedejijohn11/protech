@@ -27,7 +27,7 @@ const Loginbar = ({ uniToggle, showLogin }: NavbarProps) => {
             transition={{ type: "tween", duration: 0.8 }}
             className="z-50 absolute top-0 right-0 h-full w-[100%] md:w-[70%] lg:w-[30%] flex items-center justify-center   text-black bg-white"
           >
-            <div className=" h-[98%] w-[95%] bg-slate-500">
+            <div className=" h-[98%] w-[95%] ">
               <button
                 onClick={() => uniToggle("login_menu")}
                 className="p-[2px] mt-1 border-none text-2xl bg-white focus:outline-none"

@@ -21,8 +21,8 @@ function SideBar() {
       <motion.div
         initial={{ x: "100%" }}
         animate={{ x: "0" }}
-        exit={{ x: "100%" }}
-        transition={{ type: "tween", duration: 0.8 }}
+        exit={{ x: "-100%" }}
+        transition={{ type: "tween", duration: 0.9 }}
         className=" flex flex-col p-[15px] h-full w-full"
       >
         <h1 className="text-4xl">{label}</h1>
