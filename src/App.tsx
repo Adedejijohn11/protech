@@ -13,7 +13,9 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/product/:id" element={<Product />} />
           <Route path="/sales" element={<Sales />} />
+          <Route path="/sales/product/:id" element={<Product />} />
           <Route path="/newarrivals" element={<NewProducts />} />
+          <Route path="/newarrivals/product/:id" element={<Product />} />
         </Route>
       </Routes>
     </BrowserRouter>

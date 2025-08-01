@@ -5,10 +5,13 @@ import { IoIosArrowForward } from "react-icons/io";
 import { useParams } from "react-router-dom";
 import { productData } from "../components/Home/productData";
 import { useEffect, useState } from "react";
+import { AnimatePresence, scale } from "motion/react";
+import * as motion from "motion/react-client";
 
 function Product() {
   const { id } = useParams<{ id: string }>();
   const [currentImage, setCurrentImage] = useState("");
+  const [isVisible, setIsVisible] = useState(true);
 
   const productId = Number(id);
 
@@ -27,20 +30,51 @@ function Product() {
     }
   }, [productDetails]);
 
+  const containerVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.8,
+      },
+    },
+  };
+
+  const toggleAnimation = () => {
+    setIsVisible(false);
+    // Wait for a moment before setting it to true to allow the exit animation to complete
+    setTimeout(() => {
+      setIsVisible(true);
+    }, 1000); // Adjust the delay as needed
+  };
+
+  // console.log("isVisible:", isVisible);
+
   return (
     <div className="h-full w-full  flex flex-col p-[12px] ">
       <p>Home - Catalog - Boose - Qiet Place Speakers</p>
       <div className="  flex flex-col lg:flex-row h-auto lg:h-full w-full mt-[12px]">
         <div className=" relative h-[600px] md:h-[700px] lg:h-full w-full lg:w-[60%] flex flex-col items-center justify-center ">
-          <div className="h-[75%] md:h-[75%] w-[72%] md:w-[60%] ">
+          <AnimatePresence mode="wait">
             {currentImage && (
-              <img
-                className=" h-full w-full"
-                src={currentImage}
-                alt="products"
-              />
+              <motion.div
+                initial="hidden"
+                animate="visible"
+                key={isVisible ? "visible" : "hidden"}
+                variants={containerVariants}
+                className="h-[75%] md:h-[75%] w-[72%] md:w-[60%] "
+              >
+                (
+                <img
+                  className=" h-full w-full"
+                  src={currentImage}
+                  alt="products"
+                />
+                )
+              </motion.div>
             )}
-          </div>
+          </AnimatePresence>
           <div className=" absolute top-[14px] left-[14px] py-[8px] px-[12px] text-black font-semibold rounded-xl bg-hightlight">
             Bestseller
           </div>
@@ -61,7 +95,9 @@ function Product() {
               return (
                 <div
                   key={index}
-                  onClick={() => setNewImage(image)}
+                  onClick={() => {
+                    setNewImage(image), toggleAnimation();
+                  }}
                   className={` h-[50px] w-[50px] rounded-xl ${
                     currentImage === image
                       ? " border-4 border-hightlight"
