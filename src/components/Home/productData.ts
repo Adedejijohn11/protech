@@ -15,11 +15,8 @@ export const productData = [
     oldPrice: 1056.0,
     description: "High-quality coffee machine with advanced features",
     productName: "Coffee Machine",
-<<<<<<< HEAD
     isNewArrival: false,
-=======
     category: "kitchen",
->>>>>>> dev
   },
   {
     id: 2,

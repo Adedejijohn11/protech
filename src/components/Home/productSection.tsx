@@ -19,7 +19,7 @@ function ProductSection({ navFilter, data }: CardGridProps) {
       {navFilter === "allitems"
         ? data.map((item) => <ProductCard key={item.id} item={item} />)
         : data
-            .filter((item) => item.category.toLowerCase() === navFilter)
+            .filter((item) => item?.category?.toLowerCase() === navFilter)
             .map((item) => <ProductCard key={item.id} item={item} />)}
     </div>
   );
