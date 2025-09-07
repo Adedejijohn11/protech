@@ -1,17 +1,46 @@
-import React from "react";
+// import React from "react";
 import { FaStar } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa6";
 import { TbCurrencyDollar } from "react-icons/tb";
 import type { cardData } from "../../types/global";
 import { Link } from "react-router-dom";
+import * as motion from "motion/react-client";
+
+import { useGlobalContext } from "../../context/globalContext";
 
 type cardProps = {
   item: cardData;
 };
 
 const NewArrivalsCard = ({ item }: cardProps) => {
+  const { addToCart } = useGlobalContext();
+  const itemVariants = {
+    hidden: {
+      y: 20,
+      opacity: 0,
+      scale: 0.8,
+    },
+    visible: {
+      y: 0,
+      opacity: 1,
+      scale: 1,
+      transition: {
+        type: "spring" as const,
+        damping: 12,
+        stiffness: 200,
+      },
+    },
+  };
+
   return (
-    <div className=" h-[480px] w-full flex flex-col items-center">
+    <motion.div
+      variants={itemVariants}
+      whileHover={{
+        scale: 1.02,
+        transition: { type: "spring", stiffness: 300 },
+      }}
+      className=" h-[480px] w-full flex flex-col items-center"
+    >
       {/*product-item */}
       <div className="h-auto w-full rounded-2xl bg-secondary p-2 ">
         <div className=" flex flex-col items-center">
@@ -66,14 +95,17 @@ const NewArrivalsCard = ({ item }: cardProps) => {
             </div>
             <div className="flex flex-row justify-between items-center">
               <p>{item.productName}</p>
-              <button className="h-[30px] w-auto flex items-center bg-red-500 hover:bg-red-700 ">
+              <button
+                onClick={() => addToCart(item)}
+                className="h-[30px] w-auto flex items-center bg-red-500 hover:bg-red-700 "
+              >
                 Add to cart
               </button>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

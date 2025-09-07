@@ -7,9 +7,10 @@ import * as motion from "motion/react-client";
 
 type cardProps = {
   item: cardData;
+  addToCart: (item: cardData) => void;
 };
 
-function ProductCard({ item }: cardProps) {
+function ProductCard({ item, addToCart }: cardProps) {
   const itemVariants = {
     hidden: {
       y: 20,
@@ -35,7 +36,7 @@ function ProductCard({ item }: cardProps) {
         scale: 1.02,
         transition: { type: "spring", stiffness: 300 },
       }}
-      className=" h-[480px] w-full flex flex-col items-center"
+      className=" h-[480px] w-full flex flex-col items-center "
     >
       {/*product-item */}
       <div className="h-auto w-full rounded-2xl bg-secondary p-2 ">
@@ -91,7 +92,10 @@ function ProductCard({ item }: cardProps) {
             </div>
             <div className="flex flex-row justify-between items-center">
               <p>{item.productName}</p>
-              <button className="h-[30px] w-auto flex items-center bg-red-500 hover:bg-red-700 ">
+              <button
+                onClick={() => addToCart(item)}
+                className="h-[30px] w-auto flex items-center bg-red-500 hover:bg-red-700 "
+              >
                 Add to cart
               </button>
             </div>

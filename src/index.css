@@ -27,10 +27,6 @@ a {
   text-decoration: inherit;
 }
 
-/* a:hover {
-  color: var(--hightlight-color);
-} */
-
 body {
   margin: 0;
   display: flex;

@@ -13,6 +13,7 @@ function Home() {
 
   return (
     <div className="relative flex flex-row h-full w-full">
+      {/* filter */}
       <button
         className="absolute top-[56px] left-0 z-30 py-[6px] px-[12px] rounded-l-none rounded-r-md lg:hidden"
         onClick={toggleSidebar}
@@ -20,6 +21,7 @@ function Home() {
         <FaFilter />
       </button>
 
+      {/* sidebar */}
       <div
         className={`z-40 absolute md:absolute lg:static h-[100%] w-[80%] lg:w-[20%] ${
           isSidebarOpen ? "flex" : "hidden"
@@ -33,9 +35,11 @@ function Home() {
         </button>
         <SideBar />
       </div>
+
+      {/* mainsection */}
       <div
         onClick={isSidebarOpen ? toggleSidebar : undefined}
-        className="z-0 h-[100%] w-full md:w-full lg:w-[80%] overflow-y-scroll no-scrollbar p-[5px]"
+        className=" h-[100%] w-full md:w-full lg:w-[80%] overflow-y-scroll no-scrollbar p-[5px]"
       >
         <MainSection />
       </div>

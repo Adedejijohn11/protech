@@ -14,3 +14,7 @@ export type cardData = {
   keyFeatures?: string[];
   isNewArrival: boolean;
 };
+
+export interface ItemsData extends cardData {
+  quantity: number;
+}

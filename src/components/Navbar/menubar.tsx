@@ -4,13 +4,16 @@ import { IoPerson } from "react-icons/io5";
 import { IoMdClose } from "react-icons/io";
 import { Link } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
+import { useGlobalContext } from "../../context/globalContext";
 
-type MenuProps = {
-  showMenu: boolean;
-  uniToggle: (menu: string) => void;
-};
+// type MenuProps = {
+//   showMenu: boolean;
+//   uniToggle: (menu: string) => void;
+// };
 
-const MenuBar = ({ showMenu, uniToggle }: MenuProps) => {
+const MenuBar = () => {
+  const { showMenu, onToggle } = useGlobalContext();
+
   return (
     <AnimatePresence initial={false}>
       {showMenu && (
@@ -19,7 +22,7 @@ const MenuBar = ({ showMenu, uniToggle }: MenuProps) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            onClick={() => uniToggle("mobile_menu")}
+            onClick={() => onToggle("mobile_menu")}
             className={`absolute lg:hidden top-0 z-40 h-full w-full inset-0 bg-black/40 shadow-lg `}
           ></motion.div>
           <motion.div
@@ -34,7 +37,7 @@ const MenuBar = ({ showMenu, uniToggle }: MenuProps) => {
                 <h1 className="text-2xl ">Protech</h1>
                 <button
                   className="p-[2px] mt-1 text-2xl bg-black focus:outline-none"
-                  onClick={() => uniToggle("mobile_menu")}
+                  onClick={() => onToggle("mobile_menu")}
                 >
                   <IoMdClose />
                 </button>
@@ -43,7 +46,7 @@ const MenuBar = ({ showMenu, uniToggle }: MenuProps) => {
               <div className=" flex flex-col mt-14 gap-5 ">
                 <button
                   className="flex items-center py-2 px-6 rounded-full border border-gray-500 "
-                  onClick={() => uniToggle("mobile_menu")}
+                  onClick={() => onToggle("mobile_menu")}
                 >
                   <div className="text-2xl mr-3">
                     <FiAlignLeft />
@@ -51,22 +54,22 @@ const MenuBar = ({ showMenu, uniToggle }: MenuProps) => {
                   Catalog
                 </button>
                 <div className="flex flex-col gap-8 ml-2">
-                  <Link to="/" onClick={() => uniToggle("mobile_menu")}>
+                  <Link to="/" onClick={() => onToggle("mobile_menu")}>
                     Bestsellers
                   </Link>
-                  <Link to="sales" onClick={() => uniToggle("mobile_menu")}>
+                  <Link to="sales" onClick={() => onToggle("mobile_menu")}>
                     Sales
                   </Link>
                   <Link
                     to="/newarrivals"
-                    onClick={() => uniToggle("mobile_menu")}
+                    onClick={() => onToggle("mobile_menu")}
                   >
                     NewArrivals
                   </Link>
                   <Link
                     to="/login"
                     className="flex items-center"
-                    onClick={() => uniToggle("login_menu")}
+                    onClick={() => onToggle("login_menu")}
                   >
                     <div className="mr-2 text-xl">
                       <IoPerson />

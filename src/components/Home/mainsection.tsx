@@ -1,15 +1,19 @@
 import { FiAlignCenter } from "react-icons/fi";
 import ProductSection from "./productSection";
-import { productData } from "./productData";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-// import * as motion from "motion/react-client";
 import { AnimatePresence } from "motion/react";
 import * as motion from "motion/react-client";
+import { productData } from "../data/productData";
+import { useGlobalContext } from "../../context/globalContext";
 
-function MainSection() {
+const MainSection = () => {
+  const { addToCart } = useGlobalContext();
+
   const [navFilter, setNavFilter] = useState("allitems");
   const [isVisible, setIsVisible] = useState(true);
+
+  // const [cart, setCart] = useState<ItemsData[]>([]);
 
   const handleMakeChange = (newFilter: string) => {
     setNavFilter(newFilter);
@@ -121,13 +125,17 @@ function MainSection() {
           variants={containerVariants}
           transition={{ type: "tween", duration: 0.8 }}
           key={isVisible ? "visible" : "hidden"}
-          className="h-auto w-full  flex pt-9 "
+          className="h-auto w-full flex pt-9 "
         >
-          <ProductSection navFilter={navFilter} data={productData} />
+          <ProductSection
+            navFilter={navFilter}
+            products={productData}
+            addToCart={addToCart}
+          />
         </motion.div>
       </AnimatePresence>
     </div>
   );
-}
+};
 
 export default MainSection;

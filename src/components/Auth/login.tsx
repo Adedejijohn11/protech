@@ -1,14 +1,12 @@
 import { IoMdClose } from "react-icons/io";
 import { FaFacebook } from "react-icons/fa";
-import { FiEye, FiEyeOff } from "react-icons/fi";
+import { FiEye } from "react-icons/fi";
 import { AnimatePresence, motion } from "framer-motion";
+import { useGlobalContext } from "../../context/globalContext";
 
-type NavbarProps = {
-  uniToggle: (menu: string) => void;
-  showLogin: boolean;
-};
+const Loginbar = () => {
+  const { showLogin, onToggle } = useGlobalContext();
 
-const Loginbar = ({ uniToggle, showLogin }: NavbarProps) => {
   return (
     <AnimatePresence initial={false}>
       {showLogin && (
@@ -17,8 +15,8 @@ const Loginbar = ({ uniToggle, showLogin }: NavbarProps) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            onClick={() => uniToggle("login_menu")}
-            className={`absolute top-0 right-0 z-40 h-full w-full inset-0 bg-white/30 lg:bg-transparent  `}
+            onClick={() => onToggle("login_menu")}
+            className="absolute top-0 right-0 z-40 h-full w-full inset-0 bg-white/30 lg:bg-transparent "
           ></motion.div>
           <motion.div
             initial={{ x: "100%" }}
@@ -29,7 +27,7 @@ const Loginbar = ({ uniToggle, showLogin }: NavbarProps) => {
           >
             <div className=" h-[98%] w-[95%] ">
               <button
-                onClick={() => uniToggle("login_menu")}
+                onClick={() => onToggle("login_menu")}
                 className="p-[2px] mt-1 border-none text-2xl bg-white focus:outline-none"
               >
                 <IoMdClose />
@@ -91,6 +89,7 @@ const Loginbar = ({ uniToggle, showLogin }: NavbarProps) => {
                         Forgot your password?
                       </a>
                     </div>
+
                     <button className="mb-6 text-white">LOGIN</button>
 
                     <p className=" text-center">
