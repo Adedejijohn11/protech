@@ -1,16 +1,8 @@
 import { IoMdClose } from "react-icons/io";
 import CartModal from "./cartModal";
-// import { useCart } from "./cartContext";
 import { useGlobalContext } from "../../context/globalContext";
 
-// type cartProps = {
-//   showCart: boolean;
-//   onToggle: (menu: string) => void;
-// };
-
 const CartItems = () => {
-  // const { cart, clearCart } = useCart();
-
   const { cart, clearCart, showCart, onToggle } = useGlobalContext();
   const totalPrice = cart.reduce(
     (sum, item) => sum + item.price * item.quantity,

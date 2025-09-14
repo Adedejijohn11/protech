@@ -15,14 +15,11 @@ function App() {
           <Route element={<Layout />}>
             <Route path="/" element={<Home />} />
             <Route path="/product/:id" element={<Product />} />
-            {/* <Route path="/product/cart" element={<Cart />} /> */}
-            {/* <Route path="/cart" element={<Cart />} /> */}
             <Route path="/sales" element={<Sales />} />
             <Route path="/sales/product/:id" element={<Product />} />
             <Route path="/newarrivals" element={<NewProducts />} />
             <Route path="/newarrivals/product/:id" element={<Product />} />
           </Route>
-          {/* <Route path="/sidebarsample" element={<SidebarSample />} /> */}
           <Route path="/cart" element={<Cart />} />
         </Routes>
       </BrowserRouter>
