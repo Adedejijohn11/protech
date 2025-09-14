@@ -125,8 +125,6 @@ export const GlobalContextProvider = ({
   );
 };
 
-// export const useGlobalContext = () => useContext(GlobalContext)!;
-
 export const useGlobalContext = () => {
   const context = useContext(GlobalContext);
   if (!context)

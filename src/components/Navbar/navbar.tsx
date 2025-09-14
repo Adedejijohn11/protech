@@ -4,17 +4,8 @@ import { FiShoppingCart } from "react-icons/fi";
 import { IoPerson } from "react-icons/io5";
 import { MdMenu } from "react-icons/md";
 import { Link } from "react-router-dom";
-
 import { useGlobalContext } from "../../context/globalContext";
 import Search from "./search";
-// import MenuBar from "./menubar";
-
-// import Loginbar from "./Login/login";
-
-// type NavbarProps = {
-//   uniToggle: (menu: string) => void;
-
-// };
 
 function Navbar() {
   const { cart, onToggle } = useGlobalContext();

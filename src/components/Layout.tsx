@@ -3,7 +3,7 @@ import Navbar from "./Navbar/navbar";
 import MenuBar from "./Navbar/menubar";
 import Loginbar from "./Auth/login";
 import { Toaster } from "react-hot-toast";
-// import CartItems from "./Cart/cartItems";
+
 import Cart from "../pages/cart";
 
 const Layout = () => {
@@ -14,10 +14,7 @@ const Layout = () => {
       <Navbar />
       {/* MenuModal*/}
       <MenuBar />
-      {/* LoginModal */}
       <Loginbar />
-      {/* SearchModal */}
-      {/* CartModal */}
       <Cart />
 
       <main className="h-[calc(100vh-80px)] w-full flex flex-col">
@@ -25,7 +22,6 @@ const Layout = () => {
           <Outlet />
         </div>
       </main>
-      {/* Footer */}
     </div>
   );
 };

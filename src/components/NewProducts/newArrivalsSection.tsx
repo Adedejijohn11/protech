@@ -1,4 +1,3 @@
-import React from "react";
 import { productData } from "../data/productData";
 import NewArrivalsCard from "./newArrivalsCard";
 import { AnimatePresence } from "motion/react";

@@ -6,11 +6,6 @@ import { Link } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { useGlobalContext } from "../../context/globalContext";
 
-// type MenuProps = {
-//   showMenu: boolean;
-//   uniToggle: (menu: string) => void;
-// };
-
 const MenuBar = () => {
   const { showMenu, onToggle } = useGlobalContext();
 

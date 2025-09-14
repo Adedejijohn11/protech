@@ -14,7 +14,6 @@ function Product() {
   const { addToCart, onToggle } = useGlobalContext();
   const { id } = useParams<{ id: string }>();
   const [currentImage, setCurrentImage] = useState("");
-  // const [isVisible, setIsVisible] = useState(true);
 
   const productId = Number(id);
 

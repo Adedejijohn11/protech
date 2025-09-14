@@ -1,5 +1,4 @@
 import { useState } from "react";
-// import MainSection from "../components/Home/mainsection";
 import SideBar from "../components/Home/sidebar";
 import { FaFilter } from "react-icons/fa";
 import { MdKeyboardDoubleArrowLeft } from "react-icons/md";

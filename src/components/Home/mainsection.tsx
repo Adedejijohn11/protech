@@ -13,8 +13,6 @@ const MainSection = () => {
   const [navFilter, setNavFilter] = useState("allitems");
   const [isVisible, setIsVisible] = useState(true);
 
-  // const [cart, setCart] = useState<ItemsData[]>([]);
-
   const handleMakeChange = (newFilter: string) => {
     setNavFilter(newFilter);
     // Reset visibility to false before setting it to true || Trigger animation

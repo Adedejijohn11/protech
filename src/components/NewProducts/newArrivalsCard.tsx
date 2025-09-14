@@ -1,4 +1,3 @@
-// import React from "react";
 import { FaStar } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa6";
 import { TbCurrencyDollar } from "react-icons/tb";
