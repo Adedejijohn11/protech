@@ -4,7 +4,7 @@ import Layout from "./components/Layout";
 import Product from "./pages/product";
 import Sales from "./pages/sales";
 import { GlobalContextProvider } from "./context/globalContext";
-import NewProducts from "./pages/newarrivals";
+import NewArrivals from "./pages/newarrivals";
 import Cart from "./pages/cart";
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
             <Route path="/product/:id" element={<Product />} />
             <Route path="/sales" element={<Sales />} />
             <Route path="/sales/product/:id" element={<Product />} />
-            <Route path="/newarrivals" element={<NewProducts />} />
+            <Route path="/newarrivals" element={<NewArrivals />} />
             <Route path="/newarrivals/product/:id" element={<Product />} />
           </Route>
           <Route path="/cart" element={<Cart />} />

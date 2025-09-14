@@ -4,7 +4,7 @@ import { FaFilter } from "react-icons/fa";
 import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
 import NewArrivalsSection from "../components/NewProducts/newArrivalsSection";
 
-function NewProducts() {
+function NewArrivals() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const toggleSidebar = () => {
@@ -43,4 +43,4 @@ function NewProducts() {
   );
 }
 
-export default NewProducts;
+export default NewArrivals;
