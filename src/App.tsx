@@ -4,8 +4,9 @@ import Layout from "./components/Layout";
 import Product from "./pages/product";
 import Sales from "./pages/sales";
 import { GlobalContextProvider } from "./context/globalContext";
-import NewArrivals from "./pages/newarrivals";
+// import NewArrivals from "./pages/newarrivals";
 import Cart from "./pages/cart";
+import NewArrivals from "./pages/newarrivals";
 
 function App() {
   return (
