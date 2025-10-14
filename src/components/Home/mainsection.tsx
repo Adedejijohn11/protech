@@ -16,7 +16,6 @@ const MainSection = () => {
   const handleMakeChange = (newFilter: string) => {
     setNavFilter(newFilter);
     // Reset visibility to false before setting it to true || Trigger animation
-
     setIsVisible(false);
     // Wait for a moment before setting it to true to allow the exit animation to complete
     setTimeout(() => {

@@ -44,7 +44,8 @@ function SideBar() {
           </div>
           <div className=" w-full flex flex-row flex-wrap gap-1 mt-[20px] ">
             <div className=" flex items-center justify-center h-[45px] px-[30px] rounded-full bg-secondary">
-              <p className="mr-2">Apple</p> <CancelButton />
+              <p className="mr-2">Apple</p>
+              <CancelButton />
             </div>
             <div className=" flex items-center justify-center h-[45px] px-[30px] rounded-full bg-secondary">
               <p className="mr-2">SMEG</p> <CancelButton />

@@ -18,6 +18,7 @@ type GlobalContexType = {
   showLogin: boolean;
   showCart: boolean;
   onToggle: (menu: string) => void;
+  filter: ItemsData[];
 };
 
 const GlobalContext = createContext<GlobalContexType | null>(null);
@@ -32,6 +33,7 @@ export const GlobalContextProvider = ({
   const [showMenu, setShowMenu] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
   const [showCart, setShowCart] = useState(false);
+  // const [filter , setfilter] = useState("");
 
   const onToggle = (menu: string) => {
     switch (menu) {
@@ -77,6 +79,9 @@ export const GlobalContextProvider = ({
     );
   });
 
+  // Filtered products
+  const filter = productData.filter((p) => p.make === "APPLE");
+
   const addToCart = (item: cardData) => {
     setCart((prev) => {
       const exist = prev.find((p) => p.id === item.id);
@@ -115,6 +120,7 @@ export const GlobalContextProvider = ({
         updateQuantity,
         clearCart,
         filteredProducts,
+        filter,
         search,
         setSearch,
         productData,
