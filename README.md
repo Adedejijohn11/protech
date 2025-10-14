@@ -45,9 +45,9 @@ The website includes **animated Material UI cards** for a smooth, interactive sh
 
 ---
 
-## 🛠 Installation & Setup
+## Installation & Setup
 
-1. **Clone the repository**
+**Clone the repository**
 
 git clone https://github.com/Adedejijohn11/protech.git
 
