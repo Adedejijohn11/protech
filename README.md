@@ -19,6 +19,20 @@ The website includes **animated Material UI cards** for a smooth, interactive sh
 
 ## Folder Structure
 
+- public/assets/ → Images
+- src/components/ → Reusable UI components
+- src/pages/ → Page components (Home, Product Detail, Cart, New Arrivals and Sales ).
+- src/context/ → React Context for global state management
+- src/types/ → TypeScript types/interfaces for consistent type-checking.
+- index.css → Tailwind base, components and utilities imports
+- App.tsx → Root component containing all routes
+- main.tsx → App entry point that renders <App /> into the DOM
+- index.tsx → App entry point.
+- package.json → Dependencies and scripts.
+- README.md → Project documentation.
+- tailwind.config.js → Tailwind CSS configuration.
+- tsconfig.json → TypeScript configuration.
+
 ---
 
 ## Tech Stack
@@ -47,7 +61,7 @@ npm start
 
 ## Deployment / Live Site
 
-The website is hosted on **GitHub Pages**
+The website is deploy on **Vercel**
 
 Live URL:
 https://protech-xi-three.vercel.app/
